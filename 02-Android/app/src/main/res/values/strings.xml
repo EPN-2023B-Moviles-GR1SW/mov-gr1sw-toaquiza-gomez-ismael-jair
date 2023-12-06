@@ -1,3 +1,4 @@
 <resources>
-    <string name="hola">Default</string>
+    <string name="app_name">APPijtg</string>
+    <string name="hola">Hola Mundo</string>
 </resources>

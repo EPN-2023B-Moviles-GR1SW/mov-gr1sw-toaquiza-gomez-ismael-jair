@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_back">#FFFFFFF</color>
-    <color name="text_color">#FFFFFFF</color>
-    <color name="color_ec_port">#FFBB86FC</color>
-    <color name="color_ec_land">#6708DC</color>
-    <color name="color_en_port">#03A9F4</color>
-    <color name="color_en_land">#FF9800</color>
-
-    <color name="text_color_en_port">#FFFFFFFF</color>
-    <color name="text_color_en_land">#8BC34A</color>
-    <color name="text_color_ec_port">#000000</color>
-    <color name="text_color_ec_land">#9E0B0B</color>
+    <color name="color_back">#FFFFFF</color>
+    <color name="text_color">#000000</color>
 
 </resources>
