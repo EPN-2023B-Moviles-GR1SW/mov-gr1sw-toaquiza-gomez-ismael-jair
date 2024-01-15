@@ -1,4 +1,4 @@
-1,     Zapatillas Deportivas,     Zapatillas para correr de alta calidad,79.99, 2023/01/15
-2,     Teléfono Inteligente,     Teléfono móvil con pantalla táctil,399.99, 2023/02/20
-3,    Libro de Medicina,    Este es un libro enfocado en el cuerpo Humano,29.0, 2023/12/31
-5,   Crema,   Crema para el rostro,10.99, 2023/12/31
+1,        Zapatillas Deportivas,        Zapatillas para correr de alta calidad,79.99, 2023/01/15
+2,        Teléfono Inteligente,        Teléfono móvil con pantalla táctil,399.99, 2023/02/20
+3,       Libro de Medicina,       Este es un libro enfocado en el cuerpo Humano,29.0, 2023/12/31
+5,    Mouse,    Nuevo Mouse en el mercado,8.99, 2024/01/04

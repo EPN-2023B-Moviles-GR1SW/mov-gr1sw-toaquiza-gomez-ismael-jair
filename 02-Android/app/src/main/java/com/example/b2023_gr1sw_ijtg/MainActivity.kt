@@ -15,8 +15,7 @@ class MainActivity : AppCompatActivity() {
     val callbackContenidoIntentExplicito =
         registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
-        ){
-                result ->
+        ) { result ->
             if (result.resultCode === Activity.RESULT_OK) {
                 if (result.data != null) {
                     // Logica Negocio
@@ -29,14 +28,14 @@ class MainActivity : AppCompatActivity() {
     val callbackIntentPickUri =
         registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
-        ){
-                result ->
-            if (result.resultCode === RESULT_OK){
-                if (result.data != null){
-                    if (result.data!!.data != null){
+        ) { result ->
+            if (result.resultCode === RESULT_OK) {
+                if (result.data != null) {
+                    if (result.data!!.data != null) {
                         val uri: Uri = result.data!!.data!!
                         val cursor = contentResolver.query(
-                            uri, null, null, null, null, null)
+                            uri, null, null, null, null, null
+                        )
                         cursor?.moveToFirst()
                         val indiceTelefono = cursor?.getColumnIndex(
                             ContactsContract.CommonDataKinds.Phone.NUMBER
@@ -49,11 +48,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-    fun mostrarSnackbar(texto: String){
-        val snack = Snackbar.make(findViewById(R.id.id_layout_main),
-            texto, Snackbar.LENGTH_LONG)
+    fun mostrarSnackbar(texto: String) {
+        val snack = Snackbar.make(
+            findViewById(R.id.id_layout_main),
+            texto, Snackbar.LENGTH_LONG
+        )
         snack.show()
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -62,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         EBaseDeDatos.tablaEntrenador = ESqliteHelperEntrenador(this)
 
         val botonCicloVida = findViewById<Button>(R.id.btn_ciclo_vida)
-        botonCicloVida.setOnClickListener{
+        botonCicloVida.setOnClickListener {
             irActividad(ACicloVida::class.java)
         }
 
@@ -72,7 +74,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         val botonIntentImplicito = findViewById<Button>(
-            R.id.btn_ir_intent_implicito)
+            R.id.btn_ir_intent_implicito
+        )
         botonIntentImplicito.setOnClickListener {
             val intentConRespuesta = Intent(
                 Intent.ACTION_PICK,
@@ -82,15 +85,23 @@ class MainActivity : AppCompatActivity() {
         }
 
         val botonIntentExplicito = findViewById<Button>(
-            R.id.btn_ir_intent_explicito)
+            R.id.btn_ir_intent_explicito
+        )
         botonIntentExplicito.setOnClickListener {
             abrirActividadConParametros(
-                CIntentExplicitoParametros::class.java)
+                CIntentExplicitoParametros::class.java
+            )
         }
         val botonSqlite = findViewById<Button>(R.id.btn_sqlite)
         botonSqlite.setOnClickListener() {
             irActividad(ECrudEntrenador::class.java)
         }
+
+        val botonRView = findViewById<Button>(R.id.btn_revcycler_view)
+        botonRView
+            .setOnClickListener {
+                irActividad(FRecyclerView::class.java)
+            }
     }
 
     private fun abrirActividadConParametros(clase: Class<*>) {
@@ -105,7 +116,7 @@ class MainActivity : AppCompatActivity() {
 
     fun irActividad(
         clase: Class<*>
-    ){
+    ) {
         val intent = Intent(this, clase)
         startActivity(intent)
     }
