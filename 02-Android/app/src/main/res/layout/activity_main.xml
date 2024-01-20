@@ -76,4 +76,13 @@
         app:layout_constraintEnd_toEndOf="@+id/btn_sqlite"
         app:layout_constraintStart_toEndOf="@+id/btn_ciclo_vida" />
 
+    <Button
+        android:id="@+id/btn_google_maps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="G. MAPS"
+        app:layout_constraintBottom_toTopOf="@+id/btn_revcycler_view"
+        app:layout_constraintEnd_toEndOf="@+id/btn_revcycler_view"
+        app:layout_constraintStart_toEndOf="@+id/btn_ir_intent_implicito" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

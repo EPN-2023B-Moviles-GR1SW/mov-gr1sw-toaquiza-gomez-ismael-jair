@@ -16,7 +16,6 @@ import com.google.android.material.snackbar.Snackbar
 
 class ListViewProducto : AppCompatActivity() {
     val arregloProducto = BaseDatosMemoria.arregloProducto
-    val arregloResenia = BaseDatosMemoria.arregloResenia
     var posicionItem = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {

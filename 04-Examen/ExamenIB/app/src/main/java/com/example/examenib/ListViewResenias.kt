@@ -16,6 +16,7 @@ import android.widget.TextView
 import com.google.android.material.snackbar.Snackbar
 
 class ListViewResenias : AppCompatActivity() {
+    val arregloProducto = BaseDatosMemoria.arregloProducto
 
     val productoElegido = BaseDatosMemoria.productoElegido
     var posicionItem = 0
@@ -87,7 +88,7 @@ class ListViewResenias : AppCompatActivity() {
         builder.setPositiveButton(
             "Aceptar",
             DialogInterface.OnClickListener{ dialog, which ->
-                mostrarSnackbar("Acepto ${which}")
+                eliminarResenia()
             }
         )
 
@@ -98,6 +99,19 @@ class ListViewResenias : AppCompatActivity() {
 
         val dialogo = builder.create()
         dialogo.show()
+    }
+
+    fun eliminarResenia (){
+        val listView = findViewById<ListView>(R.id.lv_resenia)
+        val adaptador = ArrayAdapter(
+            this,
+            android.R.layout.simple_list_item_1,
+            productoElegido.resenia
+        )
+        listView.adapter = adaptador
+        productoElegido.resenia.remove(BaseDatosMemoria.reseniaElegida)
+        adaptador.notifyDataSetChanged()
+
     }
 
     fun mostrarSnackbar(texto:String){
